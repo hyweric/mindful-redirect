@@ -11,23 +11,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     yesButton.addEventListener('click', function() {
         console.log('Yes, proceed');
-        continueToTab();
+        Redirect.continueToTab();
     });
 
     noButton.addEventListener('click', function() {
         console.log('No, don\'t proceed');
-        closeTab();
+        Redirect.closeTab();
     });
-
-    function continueToTab() {
-        tab = "https://discord.com/channels/@me"; // change later 
-        window.location.href = tab;
+    var Redirect = { 
+        continueToTab() {
+            var tab = "https://discord.com/channels/@me"; // change later 
+            window.location.href = tab;
+        },
+        closeTab() {
+            // window.close(); // doesn't work because add-ons cannot close themselves unless opened by the add-on
+            var tab = "https://google.com/" // this will do tho ig 
+            window.location.href = tab;
+        }
     }
-    function closeTab() {
-        // window.close(); // doesn't work because add-ons cannot close themselves unless opened by the add-on
-        tab = "https://google.com/" // this will do tho ig 
-        window.location.href = tab;
-    }
-
 }
 );

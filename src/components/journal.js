@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     journalForm.addEventListener('submit', function(event) {
         event.preventDefault(); // prevent form submission
-        MIN_WORD_LIMIT = 5; // change later 
+        const MIN_WORD_LIMIT = 5; // change later 
 
         // Get the journal entry from the form
         const journalEntry = document.getElementById('journalEntry').value;
