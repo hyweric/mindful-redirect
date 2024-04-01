@@ -1,4 +1,7 @@
-import { Redirect } from 'proceed.js';
+import {Redirect} from './utils.js';
+
+console.log('popup.js');
+
 function journalHandler(){
     console.log('journal');
     window.location.href = 'journal.html';
@@ -13,6 +16,7 @@ function redirectHandler(){
 }
 function routineHandler(){
     console.log('routine');
+    window.location.href = 'routine.html';
     // let routine = document.querySelector('.routine');
     // routine.classList.toggle('routine--active');
 }
