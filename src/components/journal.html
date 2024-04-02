@@ -1,26 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset = "UTF-8">
-        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <title>Journal Page</title>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-        <script src = "https://kit.fontawesome.com/a076d05399.js"></script>
-        <script src = "./popup.js" defer></script>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal</title>
+    <link rel="stylesheet" href="journalStyles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="./popup.js" defer></script>
+
+</head>
 <body>
-    <h1>Journal Page</h1>
-    <form id="journalForm">
-        <label for="journalEntry">Write your reason for entering the site:</label><br>
-        <textarea id="journalEntry" name="journalEntry" rows="5" cols="50"></textarea><br>
-        <label for="journalEntry">How do you think you'll feel after going on the site:</label><br>
-        <textarea id="journalEntry2" name="journalEntry2" rows="5" cols="50"></textarea><br> 
-        <button type="submit">Submit</button>
-    </form>
-    <button type="ECSV" class="button">Export CSV Data</button>
-    <button type="ETXT" class="button">Export TXT Data</button>
+    <canvas id="sineCanvas"></canvas>
+    <div class="container">
+        <h1>Journal</h1>
+        <form id="journalForm">
+            <label for="journalEntry" class="body">Write your reason for entering the site:</label><br>
+            <textarea id="journalEntry" name="journalEntry" rows="10" cols="50"></textarea><br>
+            <label for="journalEntry2" class="body">How do you think you'll feel after going on the site:</label><br>
+            <textarea id="journalEntry2" name="journalEntry2" rows="10" cols="50"></textarea><br>
+            <button type="submit" class="button main-button animate__animated animate__fadeInLeft">Submit</button>
+            <div class="divLarge"></div>
+        </form>
+        <div class="export-buttons">
+            <div class="button-container">
+                <button type="ECSV" class="button secondary-button ">Export as CSV</button>
+                <button type="ETXT" class="button secondary-button ">Export as TXT</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="blocks-container">
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+        <div class="block"></div>
+    </div>
 
     <script src="journal.js"></script>
 </body>
 </html>
-

@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #7289da, #cab2fb);
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+    font-size: 25px;
+    color: #21242c;
+    line-height: 1.4;
+}
+
+.container {
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    animation: popOut 1s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    background: linear-gradient(to bottom, #c6d4ff, rgb(179, 179, 255));
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+#sineCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}       
+@keyframes popOut {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+h1 {
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 0;
+    font-size: 10vw;
+    font-weight: 400;
+    line-height: .8;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: 'Pacifico', cursive;
+    font-size: 60px;
+    line-height: 1.4;
+    animation: moveBlocks 2s infinite alternate;
+}
+
+@keyframes moveBlocks {
+    0% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
+
+form {
+    margin-top: 20px;
+}
+
+.error-text {
+    color: red;
+    font-size: 1rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 3px; /* You need to specify a unit for margin-bottom, like px */
+}
+
+textarea {
+    width: 100%; 
+    height: 150px;
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
+    resize: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+    opacity: 0.8;
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+.divLarge {
+    margin-top: 20px;
+}
+
+.divSmall {
+    margin-top: 10px;
+}
+
+.button {
+    font-size: medium;
+    z-index: 100;
+    color: var(--black);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+    border: 1.5px solid #000;
+    justify-content: center;
+    padding: 20px 40px 20px 50px;
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+    font-weight: 600;
+    transition: all .2s;
+    display: flex;
+    position: relative;
+}
+
+.main-button {
+    background-color: #3964ff;
+    color: #fff;
+    font-size: 25px;
+    border-radius: 50px;
+}
+
+.secondary-button {
+    background-color: #f0f0f0;
+    color: #000;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main-button:hover {
+    background-color: #2543ad;
+}
+
+.main-button:active {
+    background-color: #ffffff;
+}
+
+.secondary-button:hover {
+    background-color: #c2d9ff;
+}
+
+.secondary-button:active {
+    background-color: #0099ff;
+}
+
+
+/* Animation Classes */
+.animate__animated {
+    animation-duration: 1s;
+}
+
+.animate__fadeInUp {
+    animation-name: fadeInUp;
+}
+
+.animate__fadeInDown {
+    animation-name: fadeInDown;
+}
+
+.animate__fadeInLeft {
+    animation-name: fadeInLeft;
+}
+
+.animate__fadeInRight {
+    animation-name: fadeInRight;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* @keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+} */
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
