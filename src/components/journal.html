@@ -4,18 +4,23 @@
         <meta charset = "UTF-8">
         <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
         <title>Journal Page</title>
-        <link rel = "stylesheet" href = "./popup.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
         <script src = "https://kit.fontawesome.com/a076d05399.js"></script>
         <script src = "./popup.js" defer></script>
     </head>
 <body>
     <h1>Journal Page</h1>
     <form id="journalForm">
-        <label for="journalEntry">Write your journal entry:</label><br>
+        <label for="journalEntry">Write your reason for entering the site:</label><br>
         <textarea id="journalEntry" name="journalEntry" rows="5" cols="50"></textarea><br>
+        <label for="journalEntry">How do you think you'll feel after going on the site:</label><br>
+        <textarea id="journalEntry2" name="journalEntry2" rows="5" cols="50"></textarea><br> 
         <button type="submit">Submit</button>
     </form>
+    <button type="ECSV" class="button">Export CSV Data</button>
+    <button type="ETXT" class="button">Export TXT Data</button>
 
     <script src="journal.js"></script>
 </body>
 </html>
+

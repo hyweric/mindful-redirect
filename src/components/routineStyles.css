@@ -5,13 +5,12 @@
         color: #fff;
     }
 
-    /* .video-background {
+    .video-background {
         position: relative;
         overflow: hidden;
-    } */
+    }
 
     .video-background {
-        
         width: 100%;
         height: 600px;
         object-fit: cover;
@@ -38,7 +37,7 @@
     .animated-subheading {
         animation: slide-up 1s ease-in-out 0.5s;
     }
-    .button { /* may or may not have been plucked from a randompretty site */
+    .button { 
         z-index: 100;
         color: var(--black);
         text-align: center;
@@ -51,21 +50,21 @@
         font-size: 2rem;
         font-weight: 700;
         transition: all .2s;
-        display: flex;
+        display: flex;  
         position: relative;
     }
     .button-container {
-    display: flex; /* Use flexbox to align items horizontally */
-    justify-content: space-evenly; /* Add space between the buttons */
+    display: flex;
+    justify-content: space-evenly; 
 }
     
 
     .button:hover {
-        background-color: rgb(50, 50, 50);
+        background-color: rgb(114,137,218); /* discord color lmao*/
     }
 
     .button:active {
-        background-color: #e9b346;
+        background-color: rgb(86, 115, 218);
     }
 
     @keyframes slide-up {
