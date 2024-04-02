@@ -1,0 +1,95 @@
+
+<!doctype html>
+<html lang="en">
+
+	
+<head>
+	<meta charset="utf-8">
+
+	<title>Mindfulness Scroll Animation</title>
+
+	<meta name="description" content="A mindfulness scroll animation using reveal.js">
+	<meta name="author" content="Your Name">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+	<link rel="stylesheet" href="plugin/highlight/monokai.css"> 
+	
+	<link rel = "stylesheet" href = "/src/components/routineStyles.css"></link>
+</head>
+
+<body>
+
+	<div class="reveal">
+		<div class="slides">
+			<!-- Reflect slide -->
+			<section class="mindfulness-slide">
+				<h2>Reflect</h2>
+				<p>
+					Stand up. Take a moment to reflect on your emotions. 			
+				</p>
+			</section>
+
+			<!-- Video background -->
+			<section class="mindfulness-slide video-background">
+				<video data-autoplay src="test.mp4"></video>
+			</section>
+
+			<!-- Any Website or video link   -->
+			<section >
+				<iframe data-src="https://bts.fandom.com/wiki/SUGA" width="1000" height="1000" data-preload></iframe>
+			</section>
+
+			<!-- Animated heading and subheading slide -->
+			<section class="mindfulness-slide">
+				<h2 class="animated-heading">Heading</h2>
+				<p class="animated-subheading">Subheading</p>
+			</section>
+
+			<!-- Bulleted list slide -->
+			<section class="mindfulness-slide">
+				<h2>very cool List that idk what to write yet</h2>
+				<ul class="bulleted-list">
+					<li>Item 1</li>
+					<li>Item 2</li>
+					<li>Item 3</li>
+				</ul>
+			</section>
+
+			
+			<section class="mindfulness-slide">
+				<h2>Are you sure you want to proceed?</h2>
+				<div class="button-container">
+					<button type="Proceed1" class="button">Yes, Proceed</button>
+					<button type="Don't Proceed1" class="button">No, don't Proceed</button>
+				</div>
+			</section>
+		</div>
+	</div>
+	<script type = "module" src= "routine.js"></script>
+	<script src="dist/reveal.js"></script>
+	<script type = "module">
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			center: true,
+			hash: true,
+			autoPlayMedia: true, // for da video
+			transitionSpeed: 100000, // milliseconds
+			transition: 'concave', // none/fade/slide/convex/concave/zoom
+
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: 'plugin/highlight/highlight.js', async: true },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+
+</html>

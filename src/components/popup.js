@@ -16,7 +16,7 @@ function redirectHandler(){
 }
 function routineHandler(){
     console.log('routine');
-    window.location.href = 'routine.html';
+    window.location.href = '/src/reveal.js-master/routine.html';
     // let routine = document.querySelector('.routine');
     // routine.classList.toggle('routine--active');
 }
