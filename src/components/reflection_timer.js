@@ -1,7 +1,9 @@
-var clicked = false; // sus start button one time only
-var timeRemaining = 60;
-document.getElementById("startButton").addEventListener("click", function() {
-    if (clicked == false) {
+var clicked = false; 
+var totalTime = 10; 
+var timeRemaining = totalTime; 
+
+function startTimer() {
+    if (!clicked) {
         var timerElement = document.getElementById('timer');
         var progressCircle = document.querySelector('.timer-progress');
         
@@ -13,8 +15,10 @@ document.getElementById("startButton").addEventListener("click", function() {
             var formattedTime = (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
             timerElement.textContent = formattedTime;
 
+            var circumference = Math.PI * parseFloat(progressCircle.getAttribute("r")) * 2;
             var percentRemaining = (timeRemaining / 60) * 100;
-            progressCircle.style.strokeDashoffset = strokeDashoffset - (percentRemaining / 100) * strokeDashoffset;
+            progressCircle.style.strokeDasharray = circumference;
+            progressCircle.style.strokeDashoffset = circumference - (percentRemaining / 100) * circumference * ((60/totalTime));
 
             timeRemaining--;
 
@@ -29,5 +33,7 @@ document.getElementById("startButton").addEventListener("click", function() {
         var timerInterval = setInterval(updateTimer, 1000); 
     }
     clicked = true;
-    console.log('clicked ture');
-});
+    console.log('clicked true');
+}
+
+document.getElementById("startButton").addEventListener("click", startTimer);
