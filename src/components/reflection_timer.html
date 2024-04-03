@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset = "UTF-8">
-        <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-        <title>Reflection Timer</title>
-        <link rel = "stylesheet" href = "./popup.css">
-        <script src = "https://kit.fontawesome.com/a076d05399.js"></script>
-        <script src = "./popup.js" defer></script>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflection Timer</title>
+    <link rel="stylesheet" href="reflection_timer.css">
+</head>
+
 <body>
-    <h1>Reflection Timer</h1>
-    <p>Press and hold the button for 15 seconds.</p>
-    <button id="reflectionTimerBtn">Hold Me</button>
+    <div class="timer-container">
+        <svg class="timer-svg" viewBox="0 0 200 200">
+            <circle class="timer-circle" cx="100" cy="100" r="90"></circle>
+            <circle class="timer-progress" cx="100" cy="100" r="90"></circle>
+        </svg>
+        
+        <div class="timer-text">
+            <p id="timer">01:00</p>
+        </div>
+
+        <div class="button-container">
+            <button id="startButton">Start</button>
+        </div>  
+    </div>
 
     <script src="reflection_timer.js"></script>
 </body>

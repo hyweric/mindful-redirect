@@ -1,0 +1,136 @@
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #7289da, #cab2fb);
+    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
+    font-size: 25px;
+    color: #21242c;
+    line-height: 1.4;
+}
+#sineCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}       
+
+.container {
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    animation: popOut 1s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    background: linear-gradient(to bottom, #c6d4ff, rgb(179, 179, 255));
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    text-align: center;
+    text-transform: capitalize;
+    margin-top: 0;
+    font-size: 10vw;
+    font-weight: 400;
+    line-height: .8;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 1.4;
+    font-family: "Open Sans", sans-serif; 
+    font-size: 32px;
+    letter-spacing: 2px;
+    text-transform: uppercase; 
+    color: #000; 
+    cursor: pointer;
+    animation: moveBlocks 2s infinite alternate;
+    margin-bottom: 10px;
+
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-around;  
+}
+
+
+
+.btn {
+    margin: 12px;
+
+  align-items: center;
+  background: #f5f5fa;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: -2px -2px 30px 0 #fff,2px 2px 2px 0 #1d0dca17;
+  box-sizing: border-box;
+  color: #2a1f62;
+  cursor: pointer;
+  display: flex;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.3rem;
+  justify-content: center;
+  line-height: 1.5rem;
+  padding: 15px;
+  position: relative;
+  text-align: left;
+  transition: .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: pre;
+  width: 200px;
+  height: 180px;
+  word-break: normal;
+  word-spacing: normal;
+    
+}
+
+.btn:hover {
+  background: #f8f8ff;
+  box-shadow: -3px -3px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    padding: 24px;
+  }
+}
+
+@keyframes moveBlocks {
+    0% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(5px);
+    }
+}
+.animate__fadeInUp {
+    animation-name: fadeInUp;
+}
+@keyframes popOut {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.exit {
+    width: 100%;
+}

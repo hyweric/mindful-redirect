@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             saveJournalEntry(journalEntry, journalEntry2);
             console.log('journal logged');
             
-            window.location.href = 'proceed.html';
+            window.location.href = '/src/reveal.js-master/proceed.html';
         }
     });
 

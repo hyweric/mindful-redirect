@@ -1,0 +1,101 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f5f5f5;
+    font-family: CerebriSans-Bold, -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+.timer-container {
+    position: relative;
+    text-align: center;
+}
+
+.timer-svg {
+  /* adjust to fit viewbox */
+    width: 200px; 
+    height: 200px; 
+}
+
+.timer-circle {
+    fill: none;
+    stroke: #ddd;
+    stroke-width: 4;
+}
+
+.button-container {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.timer-progress {
+    fill: none;
+    stroke: #000000;
+    stroke-width: 4;
+    stroke-dasharray: 570; /* scales linear with timer length too*/
+    stroke-dashoffset: 570;
+    transition: stroke-dashoffset 1s cubic-bezier(0.075, 0.82, 0.165, 1);  /* control increments and movement of timer (linear for smooth, cubic bez kinda smooth?, etc)*/
+}
+
+.timer-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+    padding-bottom: 70px;
+}
+
+.timer-text p {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* slightly modified from google */
+button { 
+  align-items: center;
+  background-color: #000000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(128, 128, 128, 0.5) 0 1px 3px 0; 
+  box-sizing: border-box;
+  color: #ffffff; 
+  cursor: pointer;
+  display: inline-flex;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  width: auto;
+}
+
+button:hover {
+  transform: translateY(-1.5px);
+}
+
+button:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: #ffffff; 
+}
+button:active {
+  background-color: #242424;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: #ffffff; 
+  transform: translateY(0);
+}
