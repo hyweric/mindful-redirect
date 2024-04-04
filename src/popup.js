@@ -12,7 +12,7 @@ function redirectHandler(){
 }
 function routineHandler(){
     console.log('routine');
-    window.location.href = '/src/reveal.js-master/routine.html';
+    window.location.href = '/reveal.js-master/routine.html';
 }
 function timerHandler(){
     console.log('timer');
