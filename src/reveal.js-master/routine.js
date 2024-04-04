@@ -54,9 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
             animation.style.animationPlayState = 'running';
         }
         
-        if ((event.indexh >= 2 && event.indexh <= 6)) { // Assuming slides 3-5 are the 4th to 6th slides (0-indexed)
+        if ((event.indexh >= 2 && event.indexh <= 6)) { 
             console.log('slides skippy');
-            setTimeout(function() { Reveal.next();}, 7000); // Wait for 5 seconds (5000 milliseconds) before calling Reveal.next()
+            setTimeout(function() { Reveal.next();}, 7000); 
             // document.getElementById('animated-heading').style.animationPlayState = 'running';
         } else {
             console.log('not slides skippy');
