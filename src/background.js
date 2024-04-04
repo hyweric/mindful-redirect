@@ -11,7 +11,7 @@ function redirectIfMatchedTab() {
         if (tabs && tabs.length > 0) {
             const url = tabs[0].url;
             if (shouldRedirect(url)) {
-                chrome.tabs.update({ url: chrome.runtime.getURL("popup.html") });
+                chrome.tabs.update({ url: chrome.runtime.getURL("mainWind.html") });
             }
         } else {
             console.error("No active tabs found.");

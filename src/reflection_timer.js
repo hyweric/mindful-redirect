@@ -26,7 +26,7 @@ function startTimer() {
                 clearInterval(timerInterval);
                 timerElement.textContent = "00:00";
                 console.log('timer done');
-                window.location.href = '/src/reveal.js-master/proceed.html';
+                window.location.href = '/reveal.js-master/proceed.html';
             }
         }
 

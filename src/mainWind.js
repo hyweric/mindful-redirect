@@ -1,4 +1,4 @@
-import {Redirect} from './utils.js';
+import {Redirect} from '/utils.js';
 
 console.log('popup.js');
 
@@ -65,7 +65,7 @@ function drawSineWave(phase, amplitude, frequency, speed, rotationAngle, Xshift,
 function animateWaves() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); 
     
-    for (let i = 1; i <= 8; i++) {
+    for (let i = 1; i <= 10; i++) {
         animateWaves['phase' + i] =  drawSineWave(animateWaves['phase' + i] || i * 20, 30, 0.02, i/3 * 0.01, Math.PI / 4, i + 50* (i-2), 0 - 200 * (i-0.5)); }
         // varying speed looks cool imo
 

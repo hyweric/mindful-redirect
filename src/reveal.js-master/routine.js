@@ -1,4 +1,4 @@
-import { Redirect } from '../components/utils.js';
+import { Redirect } from '../utils.js';
 
 document.addEventListener('DOMContentLoaded', function() {
 
