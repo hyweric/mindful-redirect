@@ -3,6 +3,7 @@ export const Redirect = {
     continueToTab() {
         chrome.storage.sync.get(['redirectWebsite'], function(items) {
             console.log(items.redirectWebsite);
+            tab = items.redirectWebsite;
             window.location.href = tab;
         });
         
