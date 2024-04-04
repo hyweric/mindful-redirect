@@ -24,7 +24,7 @@ function exitHandler(){
     Redirect.closeTab();
 }
 
-chrome.storage.sync.get(['redirectWebsite', 'timer', 'routine'], function(items) {
+chrome.storage.sync.get(['redirectWebsite', 'timer', 'routine', ], function(items) {
     console.log(items.redirectWebsite);
     console.log(items.timer);
     console.log(items.routine);

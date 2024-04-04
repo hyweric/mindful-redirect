@@ -3,9 +3,8 @@ Reveal.initialize({
     progress: true,
     center: true,
     hash: true,
-    autoPlayMedia: true, // for da video
-    transitionSpeed: 100000, // milliseconds
-    transition: 'concave', // none/fade/slide/convex/concave/zoom
+    transitionSpeed: 1000000, // milliseconds
+    transition: 'zoom', // none/fade/slide/convex/concave/zoom
 
     // Optional reveal.js plugins
     dependencies: [

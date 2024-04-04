@@ -16,7 +16,7 @@ const saveOptions = () => {
 // Store in chrome storage
 const restoreOptions = () => {
     chrome.storage.sync.get(
-        { redirectWebsite: 'https://google.com/', timer: '15', routine: '' }, // default values
+        { redirectWebsite: 'https://google.com/', timer: '15', routine: '', customMessage: 'Click extension icon to write custom message'}, // default values
         (items) => {
             document.getElementById('redirectWebsite').value = items.redirectWebsite || 'https://google.com/';
             document.getElementById('timer').value = items.timer || '15';
