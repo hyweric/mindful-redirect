@@ -1,0 +1,30 @@
+<!-- using popup as options page -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Test Extension Options</title>
+    <link rel = "stylesheet" href = "./mainWind.css">
+  </head>
+  <body>
+    <label for="redirectWebsite">Redirect Website:</label>
+    <input type="text" id="redirectWebsite">
+
+    <label for="timer">Timer:</label>
+    <select id="timer">
+      <option value="15">15s</option>
+      <option value="30">30s</option>
+      <option value="60">1 min</option>
+      <option value="120">2 min</option>
+      <option value="300">5 min</option>
+      <option value="600">10 min</option>
+    </select>
+
+    <label for="routine">Routine:</label>
+    <textarea id="routine"></textarea>
+
+    <div id="status"></div>
+    <button id="save">Save</button>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

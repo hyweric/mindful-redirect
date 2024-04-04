@@ -1,6 +1,12 @@
 var clicked = false; 
-var totalTime = 10; 
-var timeRemaining = totalTime; 
+var totalTime = 100;
+var timeRemaining = totalTime;
+
+chrome.storage.sync.get(['timer'], function(items) {
+    console.log(items.timer);
+    totalTime = items.timer;
+    timeRemaining = totalTime;
+});
 
 function startTimer() {
     if (!clicked) {

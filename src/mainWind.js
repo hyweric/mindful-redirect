@@ -23,8 +23,15 @@ function exitHandler(){
     console.log('exit and focus');
     Redirect.closeTab();
 }
-document.addEventListener('DOMContentLoaded', function() {
 
+chrome.storage.sync.get(['redirectWebsite', 'exitAndFocusWebsite', 'timer', 'routine'], function(items) {
+    console.log(items.redirectWebsite);
+    console.log(items.exitAndFocusWebsite);
+    console.log(items.timer);
+    console.log(items.routine);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('journalButton').addEventListener('click', journalHandler);
     document.getElementById('redirectButton').addEventListener('click', redirectHandler);
     document.getElementById('routineButton').addEventListener('click', routineHandler);

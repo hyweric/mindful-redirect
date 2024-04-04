@@ -1,11 +1,13 @@
+var tab = "https://google.com/";
 export const Redirect = { 
     continueToTab() {
-        var tab = "https://discord.com/channels/@me"; // change later 
-        window.location.href = tab;
+        chrome.storage.sync.get(['redirectWebsite'], function(items) {
+            console.log(items.redirectWebsite);
+            window.location.href = tab;
+        });
+        
     },
     closeTab() {
-        // window.close(); // doesn't work because add-ons cannot close themselves unless opened by the add-on
-        var tab = "https://google.com/" // this will do tho ig 
-        window.location.href = tab;
+        window.close(); // only works when directly added by add-on
     }
 }
