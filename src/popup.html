@@ -2,14 +2,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>My Test Extension Options</title>
-    <link rel = "stylesheet" href = "./mainWind.css">
+    <title>Customization page</title>
+    <link rel = "stylesheet" href = "./popup.css">
   </head>
   <body>
-    <label for="redirectWebsite">Redirect Website:</label>
+    <div class = "container">   
+    <h1>Options: </h1>
+    <label for="redirectWebsite">Custom Redirect Website (Do not include https://)</label>
     <input type="text" id="redirectWebsite">
 
-    <label for="timer">Timer Length:</label>
+    <label for="timer">Reflection Timer Length:</label>
     <select id="timer">
       <option value="15">15s</option>
       <option value="30">30s</option>
@@ -20,14 +22,28 @@
     </select>
 
     <label for="routine">Custom Message in Routine:</label>
-    <textarea id="routine"></textarea>
+    <input type="text" id="routine">
     
-    <label for="blockedWebsites">List of Blocked Websites:</label>
-    <textarea id="blockedWebsites"></textarea>
-
+    <label for="blockedWebsites"> Blocked Websites to Redirect (new line):</label>
+    <textarea type = "text2" id="blockedWebsites"></textarea>
+    <label for="timeout">Time before Unblock expires (cannot change after click):</label>
+    <select id="timeout">
+      <option value="60">1 min</option>
+      <option value="300">5 min</option>
+      <option value="600">10 min</option>
+      <option value="1800">30 min</option>
+      <option value="3600">1 hr</option>
+      <option value="10800">3 hr</option>
+    </select>
     <div id="status"></div>
     <button id="save">Save</button>
+    <br>
+    <label for="routine">Unblocked Website (One max):</label>
+    <ul id="whitelist">
 
+    </ul>
+  </div>
+    
     <script src="popup.js"></script>
   </body>
 </html>

@@ -1,0 +1,112 @@
+body {
+    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(15, 15, 15);
+    font-size: 1.3rem; /* Decreased font size */
+    font-weight: 700;
+    box-sizing: inherit;
+    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+}
+
+label {
+    display: block;
+    margin-top: 15px; /* Decreased margin */
+    background: transparent;
+    color: rgb(33, 33, 33);
+    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+    scroll-behavior: smooth;
+    font-size: 14px; /* Decreased font size */
+}
+
+input[type="text2"], textarea{
+    width: 100%;
+    padding: 8px; /* Decreased padding */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 4px; /* Decreased margin */
+    margin-bottom: 12px; /* Decreased margin */
+    height: 90px; /* Decreased height */
+    resize: none;
+}
+
+input[type="text"], textarea, select {
+    width: 100%;
+    padding: 8px; /* Decreased padding */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 4px; /* Decreased margin */
+    margin-bottom: 12px; /* Decreased margin */
+    resize: vertical;
+}
+
+/* button by farfetch */
+button { 
+  background-color: #222;
+  border-radius: 4px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+  font-size: 14px; /* Decreased font size */
+  font-weight: 700;
+  line-height: 1.5;
+  margin: 0;
+  max-width: none;
+  min-height: 40px; /* Decreased min-height */
+  min-width: 8px; /* Decreased min-width */
+  outline: none;
+  overflow: hidden;
+  padding: 7px 16px 6px; /* Decreased padding */
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+button:hover {
+    background-color: #343434;
+}
+
+#status {
+    margin: 15px 0; /* Decreased margin */
+    padding: 0px;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    border-radius: 5px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.container {
+    width: 380px; /* Decreased width */
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    animation: popOut 1s ease-in-out;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding-top: 12px; /* Decreased padding */
+    padding-left: 28px; /* Decreased padding */
+    padding-right: 28px; /* Decreased padding */
+    padding-bottom: 8px; /* Decreased padding */
+    /* background: linear-gradient(to bottom, #c6d4ff, rgb(179, 179, 255)); */
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}

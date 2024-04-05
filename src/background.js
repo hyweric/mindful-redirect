@@ -5,8 +5,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 });
 
 function redirectIfMatchedTab() {
-    console.log("Redirecting if matched tab...");
-
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         if (tabs && tabs.length > 0) {
             const url = tabs[0].url;

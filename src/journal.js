@@ -5,11 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var activated = false;
     
     exportCSVButton.addEventListener('click', function() {
-        console.log('csv data export');
         exportCSVData();
     });
     exportTXTButton.addEventListener('click', function() {
-        console.log('txt data export');
         exportTXTData();
     });
 
@@ -25,22 +23,17 @@ document.addEventListener('DOMContentLoaded', function() {
         length2 = journalEntry2.trim().split(/\s+/).length;
 
         if (length < MIN_WORD_LIMIT || length2 < MIN_WORD_LIMIT) {
-            console.log("Current Length: " + length + "   Minimum limit: " + MIN_WORD_LIMIT);
-            console.log("journal entry:" + journalEntry);
             if (activated == false){
                 const errorText = document.createElement('p');
                 errorText.textContent = 'Please write at least ' + MIN_WORD_LIMIT + ' words.';
                 errorText.className = 'error-text';
                 journalForm.insertBefore(errorText, journalForm.querySelector('button[type="submit"]'));
                 activated = true;
-                console.log('error message displayed');
             }
 
         }
         else {
             saveJournalEntry(journalEntry, journalEntry2);
-            console.log('journal logged');
-            
             window.location.href = '/reveal.js-master/proceed.html';
         }
     });
@@ -150,7 +143,6 @@ function animateWaves() {
     
     for (let i = 1; i <= 10; i++) {
         animateWaves['phase' + i] =  drawSineWave(animateWaves['phase' + i] || i * 20, 30, 0.02, i/3 * 0.01, Math.PI / 4, i + 50* (i-2), 0 - 200 * (i-0.5)); }
-        // varying speed looks cool imo
 
     requestAnimationFrame(animateWaves);
 }

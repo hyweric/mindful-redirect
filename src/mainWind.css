@@ -98,11 +98,6 @@ h1 {
     
 }
 
-.btn:hover {
-  background: #f8f8ff;
-  box-shadow: -3px -3px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
-}
-
 @media (min-width: 768px) {
   .btn {
     padding: 24px;
@@ -141,6 +136,25 @@ h1 {
         transform: none;
     }
 }
+
+.buttonSubtitle {
+    color: rgb(43, 43, 43);
+    font-family: "Open Sans", sans-serif;
+    font-size: 15px;
+    user-select: text;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Added transition property */
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -170%);
+}
+
+.btn:hover .buttonSubtitle {
+    opacity: 1;
+    transform: translate(-50%, -190%);
+}
+
 
 .exit {
     width: 100%;

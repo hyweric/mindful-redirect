@@ -1,36 +1,21 @@
 import {Redirect} from '/utils.js';
 
-console.log('popup.js');
-
 function journalHandler(){
-    console.log('journal');
     window.location.href = 'journal.html';
 }
 function redirectHandler(){
-    console.log('redirect');
     Redirect.continueToTab();
 }
 function routineHandler(){
-    console.log('routine');
     window.location.href = '/reveal.js-master/routine.html';
 }
 function timerHandler(){
-    console.log('timer');
     window.location.href = 'reflection_timer.html';
 
 }
 function exitHandler(){
-    console.log('exit and focus');
     Redirect.closeTab();
 }
-
-chrome.storage.sync.get(['redirectWebsite', 'timer', 'routine', 'blockedWebsites' ], function(items) {
-    console.log(items.redirectWebsite);
-    console.log(items.timer);
-    console.log(items.routine);
-    console.log(items.blockedWebsites);
-    chrome.runtime.sendMessage({ text: items.blockedWebsites});
-});
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('journalButton').addEventListener('click', journalHandler);
@@ -38,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('routineButton').addEventListener('click', routineHandler);
     document.getElementById('reflectionTimerButton').addEventListener('click', timerHandler);
     document.getElementById('exitAndFocusButton').addEventListener('click', exitHandler);
-
 });
 
 
@@ -75,8 +59,6 @@ function animateWaves() {
     
     for (let i = 1; i <= 10; i++) {
         animateWaves['phase' + i] =  drawSineWave(animateWaves['phase' + i] || i * 20, 30, 0.02, i/3 * 0.01, Math.PI / 4, i + 50* (i-2), 0 - 200 * (i-0.5)); }
-        // varying speed looks cool imo
-
     requestAnimationFrame(animateWaves);
 }
 
