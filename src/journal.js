@@ -18,11 +18,13 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get the journal entry from the form
         const journalEntry = document.getElementById('journalEntry').value;
         const journalEntry2 = document.getElementById('journalEntry2').value;
+        const journalEntry3 = document.getElementById('journalEntry3').value;
         
         length = journalEntry.trim().split(/\s+/).length;
         length2 = journalEntry2.trim().split(/\s+/).length;
+        length3 = journalEntry3.trim().split(/\s+/).length;
 
-        if (length < MIN_WORD_LIMIT || length2 < MIN_WORD_LIMIT) {
+        if (length < MIN_WORD_LIMIT || length2 < MIN_WORD_LIMIT || length3 < MIN_WORD_LIMIT) {
             if (activated == false){
                 const errorText = document.createElement('p');
                 errorText.textContent = 'Please write at least ' + MIN_WORD_LIMIT + ' words.';
@@ -33,12 +35,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         }
         else {
-            saveJournalEntry(journalEntry, journalEntry2);
+            saveJournalEntry(journalEntry, journalEntry2, journalEntry3);
             window.location.href = '/reveal.js-master/proceed.html';
         }
     });
 
-    function saveJournalEntry(entry, entry2) {
+    function saveJournalEntry(entry, entry2, entry3) {
         var today = new Date();
         var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
         var hours = today.getHours();
@@ -57,7 +59,8 @@ document.addEventListener('DOMContentLoaded', function() {
         journalEntries.push({
             date: dateTime,
             reason: entry,
-            reflection: entry2
+            goals: entry2,
+            feeling: entry3
         });
     
         localStorage.setItem('journalEntries', JSON.stringify(journalEntries));
@@ -65,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function exportCSVData() {
         let journalEntries = JSON.parse(localStorage.getItem('journalEntries')) || [];
-        let csvContent = "data:text/csv;charset=utf-8,Date,Reason,Reflection\n";
+        let csvContent = "data:text/csv;charset=utf-8,Date,Reason,Goals,Feeling\n";
     
         // Create CSV rows for each journal entry
         for (let i = 0; i < journalEntries.length; i++) {
@@ -74,9 +77,11 @@ document.addEventListener('DOMContentLoaded', function() {
             // Handle existing commas in the text by enclosing the values in double quotes
             let date = '"' + entry.date + '"';
             let reason = '"' + entry.reason + '"';
-            let reflection = '"' + entry.reflection + '"';
+            let goals = '"' + entry.goals + '"';
+            let feeling = '"' + entry.feeling + '"';
+
     
-            csvContent += date + "," + reason + "," + reflection + "\n";
+            csvContent += date + "," + reason + "," + goals  + "," + feeling + "\n";
         }
     
         let csvElement = document.createElement('a');
@@ -97,7 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Convert each entry into a string format
             let entryString = 'Date: ' + entry.date + '\n' +
                               'Reason: ' + entry.reason + '\n' +
-                              'Reflection: ' + entry.reflection + '\n\n';
+                              'Goal: ' + entry.goals + '\n\n' + 
+                              'Feeling: ' + entry.feeling + '\n\n';
     
             txtContent += entryString;
         }

@@ -15,8 +15,10 @@ chrome.storage.sync.get(['blockedWebsites', 'whitelist', 'timeout'], function(it
         for (var i = 0; i < items.whitelist.length; i++) {
             var whitelistURL = items.whitelist[i].url;
             var whitelistTimestamp = items.whitelist[i].timestamp;
-
-            if (url === whitelistURL && currentTime - whitelistTimestamp <= timeOut * 60000) {
+            console.log('timeOut:', timeOut);
+            console.log('whitelistTimestamp:', whitelistTimestamp);
+            console.log('currentTime - whitelistTimestamp:', currentTime - whitelistTimestamp);
+            if (url === whitelistURL && currentTime - whitelistTimestamp <= timeOut * 1000) {
                 return;
             }
         }

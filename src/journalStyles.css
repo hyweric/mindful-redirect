@@ -50,10 +50,16 @@ h1 {
     line-height: .8;
     margin-top: 0;
     margin-bottom: 0;
-    font-family: 'Pacifico', cursive;
-    font-size: 60px;
     line-height: 1.4;
+    font-family: "Open Sans", sans-serif; 
+    font-size: 32px;
+    letter-spacing: 2px;
+    text-transform: uppercase; 
+    color: #000; 
+    cursor: pointer;
     animation: moveBlocks 2s infinite alternate;
+    margin-bottom: 10px;
+
 }
 
 @keyframes moveBlocks {
@@ -81,7 +87,7 @@ form {
 
 textarea {
     width: 100%; 
-    height: 150px;
+    height: 100px;
     margin-bottom: 10px;
     background-color: #f0f0f0;
     resize: none;
