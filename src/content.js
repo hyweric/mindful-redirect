@@ -1,14 +1,13 @@
-if (window.location.hostname === "www.youtube.com" ||
-    window.location.hostname === "discord.com" ||
-    window.location.hostname === "www.reddit.com") {
-    console.log('redirected');
-    redirectIfMatchedTab();
-}
+console.log('content.js');
+redirectIfMatchedTab();
 
 function redirectIfMatchedTab() {
-    console.log("Redirecting if matched tab...");
-
+    console.log("function redirectIfMatchedTab in CONTENT");
+    chrome.storage.sync.get(['blockedWebsites' ], function(items) {
+        console.log(items.blockedWebsites);
+        chrome.runtime.sendMessage({ text: items.blockedWebsites});
+    });
     chrome.runtime.sendMessage({message: "redirectIfMatchedTab"}, (response) => {
-        console.log(response);
+        console.log("kek");
     });
 }

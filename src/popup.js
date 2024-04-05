@@ -26,5 +26,15 @@ const restoreOptions = () => {
         }
     );
 };
-document.addEventListener('DOMContentLoaded', restoreOptions);
-document.getElementById('save').addEventListener('click', saveOptions);
+
+try {
+    document.addEventListener('DOMContentLoaded', restoreOptions);
+    document.getElementById('save').addEventListener('click', saveOptions);
+} catch (error) {
+    console.error('bad stuff', error);
+}
+
+chrome.storage.sync.get(['blockedWebsites' ], function(items) {
+    console.log(items.blockedWebsites);
+    chrome.runtime.sendMessage({ text: items.blockedWebsites});
+});

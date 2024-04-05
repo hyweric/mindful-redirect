@@ -29,6 +29,7 @@ chrome.storage.sync.get(['redirectWebsite', 'timer', 'routine', 'blockedWebsites
     console.log(items.timer);
     console.log(items.routine);
     console.log(items.blockedWebsites);
+    chrome.runtime.sendMessage({ text: items.blockedWebsites});
 });
 
 document.addEventListener('DOMContentLoaded', function() {
