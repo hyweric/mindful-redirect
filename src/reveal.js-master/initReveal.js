@@ -4,9 +4,8 @@ Reveal.initialize({
     center: true,
     hash: true,
     transitionSpeed: 1000000, // milliseconds
-    transition: 'zoom', // none/fade/slide/convex/concave/zoom
+    transition: 'zoom', 
 
-    // Optional reveal.js plugins
     dependencies: [
         { src: 'plugin/highlight/highlight.js', async: true },
         { src: 'plugin/zoom-js/zoom.js', async: true },

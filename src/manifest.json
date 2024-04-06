@@ -2,9 +2,9 @@
   "manifest_version": 3,
   "name": "Mindful Redirect",
   "version": "1.0",
-  "description": "Redirects to user-chosen popup on specified websites ",
+  "description": "Redirects blocked websites onto a page, where you can choose to exit, redirect, or access the site. To gain access, you must first journal down your thoughts, go through a mindfulness routine, or wait for a timer to count down.",
   "permissions": [
-    "activeTab", "storage", "scripting", "tabs", "webNavigation", "webRequest", "declarativeContent", "alarms"
+    "activeTab", "storage", "scripting", "tabs", "webNavigation", "webRequest", "declarativeContent"
   ],
   "background": {
     "service_worker": "background.js"
