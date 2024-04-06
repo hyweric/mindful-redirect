@@ -15,8 +15,8 @@ body {
 
 .timer-svg {
   /* adjust to fit viewbox */
-    width: 200px; 
-    height: 200px; 
+    width: 350px; 
+    height: 350px; 
 }
 
 .timer-circle {
@@ -51,7 +51,7 @@ body {
 
 .timer-text p {
     margin: 0;
-    font-size: 24px;
+    font-size: 48px;
 }
 
 /* slightly modified from google */
@@ -65,7 +65,7 @@ button {
   color: #ffffff; 
   cursor: pointer;
   display: inline-flex;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  padding: calc(1rem - 1px) calc(2rem - 1px); /* Increase padding to make button bigger */
   position: relative;
   text-decoration: none;
   transition: all 250ms;

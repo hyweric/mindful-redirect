@@ -2,16 +2,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Customization page</title>
+    <title>Mindful Redirect Customization page</title>
     <link rel = "stylesheet" href = "./popup.css">
   </head>
   <body>
     <div class = "container">   
     <h1>Options: </h1>
+
+    <label for="blockedWebsites"> Blocked Websites to Redirect (new line):</label>
+    <textarea type = "text2" id="blockedWebsites"></textarea>
+
     <label for="redirectWebsite">Custom Redirect Website (Do not include https://)</label>
     <input type="text" id="redirectWebsite">
 
-    <label for="timer">Reflection Timer Length:</label>
+    <label for="timer">Reflection Timer Duration:</label>
     <select id="timer">
       <option value="15">15s</option>
       <option value="30">30s</option>
@@ -24,9 +28,7 @@
     <label for="routine">Custom Message in Routine:</label>
     <input type="text" id="routine">
     
-    <label for="blockedWebsites"> Blocked Websites to Redirect (new line):</label>
-    <textarea type = "text2" id="blockedWebsites"></textarea>
-    <label for="timeout">Time before Unblock expires (cannot change after click):</label>
+    <label for="timeout">Unblock expiration Duration (cannot change after click):</label>
     <select id="timeout">
       <option value="60">1 min</option>
       <option value="300">5 min</option>

@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Redirect Extension",
+  "name": "Mindful Redirect",
   "version": "1.0",
-  "description": "Redirects to a popup on certain websites",
+  "description": "Redirects to user-chosen popup on specified websites ",
   "permissions": [
     "activeTab", "storage", "scripting", "tabs", "webNavigation", "webRequest", "declarativeContent", "alarms"
   ],
@@ -20,14 +20,18 @@
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "images/icon.png",
-      "48": "images/icon.png",
-      "128": "images/icon.png"
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png",
+      "500": "images/icon-500.png"
     }
   },
   "icons": {
-    "16": "images/icon.png",
-    "48": "images/icon.png",
-    "128": "images/icon.png"
+    "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png",
+      "128": "images/icon-128.png",
+      "500": "images/icon-500.png"
   }
 }
