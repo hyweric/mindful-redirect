@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Convert each entry into a string format
             let entryString = 'Date: ' + entry.date + '\n' +
                               'Reason: ' + entry.reason + '\n' +
-                              'Goal: ' + entry.goals + '\n\n' + 
+                              'Goal: ' + entry.goals + '\n' + 
                               'Feeling: ' + entry.feeling + '\n\n';
     
             txtContent += entryString;

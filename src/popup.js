@@ -20,7 +20,11 @@ const restoreOptions = () => {
     chrome.storage.sync.get(
         { redirectWebsite: 'google.com', timer: '15', routine: 'Change this message Extension Pop up', blockedWebsites: 'Add Blocked Websites here \n Separate each one with a new line', timeout: '60'}, // here
         (items) => {
-            document.getElementById('blockedWebsites').value = items.blockedWebsites || 'Add Blocked Websites here \nSeparate each one with a new line like this';
+            try {
+                document.getElementById('blockedWebsites').value = items.blockedWebsites || 'Add Blocked Websites here \nSeparate each one with a new line like this';
+            } catch (error) {
+                console.log('Error:', error);
+            }
             document.getElementById('redirectWebsite').value = items.redirectWebsite || 'google.com';// here
             document.getElementById('timer').value = items.timer || '15';
             document.getElementById('routine').value = items.routine || 'Change this message Extension Pop up';
@@ -47,7 +51,11 @@ const updateWhitelist = (whitelist) => {
     recentWhitelist.forEach((item) => {
         const li = document.createElement('li');
         li.textContent = `${item.url} - ${new Date(item.timestamp).toLocaleString()}`;
-        whitelistElement.appendChild(li);
+        try {
+            whitelistElement.appendChild(li);
+        } catch (error) {
+            console.log('Error:', error)
+        }
     });
 };
 

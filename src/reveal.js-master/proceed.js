@@ -2,7 +2,11 @@
 var first = true;
 
 chrome.storage.sync.get(['routine'], function(items) {
-    document.getElementById('customMSG').textContent = items.routine;
+    try {
+        document.getElementById('customMSG').textContent = items.routine;
+    } catch (error) {
+        console.log('Error' + error);
+    }
 });
 
 
