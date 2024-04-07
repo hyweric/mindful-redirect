@@ -6,8 +6,9 @@ export const Redirect = {
         });
     },
     toPrevTab() {
-        chrome.storage.sync.get(['currentURL'], function(items) {
-            window.location.href = "https://" + items.currentURL;
+        chrome.storage.sync.get(['currentURL', 'currentURLFull'], function(items) {
+            window.location.href = items.currentURLFull;
+
             var whitelist = items.whitelist || [];
             whitelist.push({
                 url: items.currentURL, 

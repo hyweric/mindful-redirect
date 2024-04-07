@@ -1,6 +1,8 @@
 chrome.storage.sync.get(['blockedWebsites', 'whitelist', 'timeout'], function(items) {
     let url = String(window.location.hostname);
-    chrome.storage.sync.set({ currentURL: url });
+    let fullURL = String(window.location.href);
+    chrome.storage.sync.set({ currentURL: url});
+    chrome.storage.sync.set({ currentURLFull: fullURL});
     
     console.log(items.blockedWebsites);
     chrome.runtime.sendMessage({ text: items.blockedWebsites});
