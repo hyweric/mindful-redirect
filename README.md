@@ -1,4 +1,4 @@
-A chrome extension extension that redirects specified websites onto a page, where you can choose to exit, redirect, or access the site through the means of completing a task.
+A chrome extension that redirects specified websites onto a page, where you can choose to exit, redirect, or access the site through the means of completing a task.
 
 The image below shows the 5 options:
 
