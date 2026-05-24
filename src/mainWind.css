@@ -109,19 +109,24 @@ h1 {
 
 .exit-button {
     width: 100%;
-    margin-top: 18px;
-    padding: 14px 18px;
-    border: 0;
+    margin-top: 22px;
+    padding: 20px 24px;
+    border: 2px solid rgba(255, 216, 107, 0.8);
     border-radius: 999px;
-    background: #3b2947;
+    background: linear-gradient(135deg, #3b2947, #5b3a65);
     color: white;
     font: inherit;
-    font-weight: 800;
+    font-size: 1.12rem;
+    font-weight: 900;
+    letter-spacing: 0.01em;
     cursor: pointer;
+    box-shadow: 0 16px 34px rgba(59, 41, 71, 0.28), 0 0 0 6px rgba(255, 216, 107, 0.16);
 }
 
 .exit-button:hover {
-    background: #2f2038;
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #2f2038, #4d3157);
+    box-shadow: 0 20px 40px rgba(59, 41, 71, 0.34), 0 0 0 7px rgba(255, 216, 107, 0.22);
 }
 
 @media (max-width: 720px) {

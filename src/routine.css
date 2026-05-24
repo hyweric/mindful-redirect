@@ -43,13 +43,39 @@ body {
     position: relative;
 }
 
-.eyebrow {
+.pick-another-button {
+    align-self: flex-start;
+    flex: 0 0 auto;
+    padding: 10px 14px;
     margin: 0 0 8px;
+    border: 1px solid rgba(52, 36, 63, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.58);
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.pick-another-button:hover {
+    background: rgba(255, 255, 255, 0.78);
+    color: var(--ink);
+}
+
+.eyebrow {
+    margin: 0 auto 8px;
     color: #a77064;
     font-size: 0.78rem;
     font-weight: 700;
     letter-spacing: 0.14em;
     text-transform: uppercase;
+    text-align: center;
+}
+
+.routine-title {
+    width: 100%;
+    display: block;
 }
 
 .slide {
@@ -218,6 +244,11 @@ button {
     font: inherit;
     font-weight: 800;
     cursor: pointer;
+}
+
+.pick-another-button {
+    flex: 0 0 auto;
+    padding: 10px 14px;
 }
 
 .primary-button {

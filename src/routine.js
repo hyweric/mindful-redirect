@@ -7,6 +7,7 @@ const backButton = document.getElementById('backButton');
 const nextButton = document.getElementById('nextButton');
 const routineMessage = document.getElementById('routineMessage');
 const breathText = document.getElementById('breathText');
+const pickAnotherButton = document.getElementById('pickAnotherButton');
 
 const breathSteps = [
     { text: 'Breathe in', duration: 4000 },
@@ -37,6 +38,10 @@ function showSlide(index) {
     backButton.disabled = index === 0;
     nextButton.textContent = index === slides.length - 1 ? 'Finish' : 'Next';
 }
+
+pickAnotherButton.addEventListener('click', function () {
+    window.location.href = 'mainWind.html';
+});
 
 backButton.addEventListener('click', function () {
     if (currentSlide > 0) {
