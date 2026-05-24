@@ -12,7 +12,7 @@ A Chrome extension that redirects specified websites onto a mindfulness page, wh
 
 | Home | Journal |
 | :---: | :---: |
-| ![Home](screenshots/home.jpg "Home") | ![Journal](screenshots/journal.png "Journal") |
+| ![Home](screenshots/home.png "Home") | ![Journal](screenshots/journal.png "Journal") |
 
 | Routine | Timer |
 | :---: | :---: |
