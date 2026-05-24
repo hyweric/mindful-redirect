@@ -2,7 +2,6 @@
     --ink: #34243f;
     --muted: #7c647f;
     --card: rgba(255, 250, 240, 0.9);
-    --gold: #ffd86b;
     --shadow: rgba(84, 47, 80, 0.18);
 }
 
@@ -19,19 +18,20 @@ body {
     color: var(--ink);
     background:
         radial-gradient(circle at 20% 18%, rgba(255, 216, 107, 0.85) 0 2px, transparent 3px),
-        radial-gradient(circle at 84% 24%, rgba(255, 248, 236, 0.9) 0 1px, transparent 2px),
-        radial-gradient(circle at 76% 82%, rgba(255, 216, 107, 0.75) 0 2px, transparent 3px),
+        radial-gradient(circle at 82% 24%, rgba(255, 248, 236, 0.9) 0 1px, transparent 2px),
+        radial-gradient(circle at 70% 80%, rgba(255, 216, 107, 0.75) 0 2px, transparent 3px),
         linear-gradient(135deg, #ffe3b8 0%, #ffc1b6 42%, #d8b5ff 100%);
     padding: 28px;
 }
 
 .container {
-    width: min(620px, 100%);
-    padding: 36px;
+    width: min(520px, 100%);
+    padding: 38px;
     border-radius: 28px;
     background: var(--card);
     box-shadow: 0 24px 70px var(--shadow);
     border: 1px solid rgba(255, 255, 255, 0.65);
+    text-align: center;
 }
 
 .eyebrow {
@@ -45,44 +45,23 @@ body {
 
 h1 {
     margin: 0;
-    font-size: clamp(2rem, 6vw, 3.2rem);
+    font-size: clamp(2rem, 6vw, 3.25rem);
     line-height: 1.05;
     letter-spacing: -0.04em;
 }
 
 .subtitle {
-    margin: 12px 0 26px;
+    margin: 14px 0 26px;
     color: var(--muted);
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 800;
+.actions {
+    display: grid;
+    gap: 12px;
 }
 
-textarea {
-    width: 100%;
-    min-height: 180px;
-    padding: 16px;
-    border: 1px solid rgba(52, 36, 63, 0.16);
-    border-radius: 18px;
-    resize: vertical;
-    background: rgba(255, 255, 255, 0.68);
-    color: var(--ink);
-    font: inherit;
-    line-height: 1.45;
-    outline: none;
-}
-
-textarea:focus {
-    border-color: #d89a40;
-    box-shadow: 0 0 0 4px rgba(255, 216, 107, 0.28);
-}
-
-.primary-button,
-.secondary-button {
-    border: 0;
+button {
+    padding: 14px 18px;
     border-radius: 999px;
     font: inherit;
     font-weight: 800;
@@ -90,27 +69,19 @@ textarea:focus {
 }
 
 .primary-button {
-    width: 100%;
-    margin-top: 16px;
-    padding: 14px 18px;
+    border: 0;
     background: #3b2947;
     color: white;
 }
 
-.primary-button:hover {
-    background: #2f2038;
-}
-
-.export-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 14px;
-}
-
 .secondary-button {
-    flex: 1;
-    padding: 12px 14px;
+    border: 1px solid rgba(52, 36, 63, 0.14);
     background: rgba(255, 255, 255, 0.62);
     color: var(--ink);
-    border: 1px solid rgba(52, 36, 63, 0.12);
+}
+
+.ghost-button {
+    border: 0;
+    background: transparent;
+    color: var(--muted);
 }

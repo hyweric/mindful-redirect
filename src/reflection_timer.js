@@ -1,45 +1,51 @@
-var clicked = false; 
-var totalTime = 100;
-var timeRemaining = totalTime;
+let clicked = false;
+let totalTime = 15;
+let timeRemaining = totalTime;
+let timerInterval = null;
 
-chrome.storage.sync.get(['timer'], function(items) {
-    console.log(items.timer);
-    totalTime = items.timer;
+chrome.storage.sync.get({ timer: '15' }, function (items) {
+    totalTime = Number(items.timer) || 15;
     timeRemaining = totalTime;
 });
 
-function startTimer() {
-    if (!clicked) {
-        var timerElement = document.getElementById('timer');
-        var progressCircle = document.querySelector('.timer-progress');
-        
-        var strokeDashoffset = 570;
-        this.disable = true;
-        function updateTimer() {
-            var minutes = Math.floor(timeRemaining / 60);
-            var seconds = timeRemaining % 60;
-            var formattedTime = (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
-            timerElement.textContent = formattedTime;
-
-            var circumference = Math.PI * parseFloat(progressCircle.getAttribute("r")) * 2;
-            var percentRemaining = (timeRemaining / 60) * 100;
-            progressCircle.style.strokeDasharray = circumference;
-            progressCircle.style.strokeDashoffset = circumference - (percentRemaining / 100) * circumference * ((60/totalTime));
-
-            timeRemaining--;
-
-            if (timeRemaining < 0) {
-                clearInterval(timerInterval);
-                timerElement.textContent = "00:00";
-                console.log('timer done');
-                window.location.href = '/reveal.js-master/proceed.html';
-            }
-        }
-
-        var timerInterval = setInterval(updateTimer, 1000); 
-    }
-    clicked = true;
-    console.log('clicked true');
+function formatTime(secondsLeft) {
+    const minutes = Math.floor(secondsLeft / 60);
+    const seconds = secondsLeft % 60;
+    return (
+        (minutes < 10 ? '0' : '') + minutes +
+        ':' +
+        (seconds < 10 ? '0' : '') + seconds
+    );
 }
 
-document.getElementById("startButton").addEventListener("click", startTimer);
+function updateTimer() {
+    const timerElement = document.getElementById('timer');
+    const progressCircle = document.querySelector('.timer-progress');
+    const circumference = Math.PI * parseFloat(progressCircle.getAttribute('r')) * 2;
+
+    timerElement.textContent = formatTime(timeRemaining);
+    progressCircle.style.strokeDasharray = circumference;
+
+    const percentRemaining = timeRemaining / totalTime;
+    progressCircle.style.strokeDashoffset = circumference - percentRemaining * circumference;
+
+    timeRemaining--;
+
+    if (timeRemaining < 0) {
+        clearInterval(timerInterval);
+        timerElement.textContent = '00:00';
+        window.location.href = 'confirm.html';
+    }
+}
+
+function startTimer() {
+    if (clicked) return;
+
+    clicked = true;
+    document.getElementById('startButton').disabled = true;
+
+    updateTimer();
+    timerInterval = setInterval(updateTimer, 1000);
+}
+
+document.getElementById('startButton').addEventListener('click', startTimer);

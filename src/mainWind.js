@@ -1,64 +1,24 @@
-import {Redirect} from '/utils.js';
+import { Redirect } from './utils.js';
 
-function journalHandler(){
+function goToJournal() {
     window.location.href = 'journal.html';
 }
-function redirectHandler(){
-    Redirect.continueToTab();
-}
-function routineHandler(){
-    window.location.href = '/reveal.js-master/routine.html';
-}
-function timerHandler(){
-    window.location.href = 'reflection_timer.html';
 
+function goToRoutine() {
+    window.location.href = 'routine.html';
 }
-function exitHandler(){
+
+function goToTimer() {
+    window.location.href = 'reflection_timer.html';
+}
+
+function exitAndFocus() {
     Redirect.closeTab();
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('journalButton').addEventListener('click', journalHandler);
-    document.getElementById('redirectButton').addEventListener('click', redirectHandler);
-    document.getElementById('routineButton').addEventListener('click', routineHandler);
-    document.getElementById('reflectionTimerButton').addEventListener('click', timerHandler);
-    document.getElementById('exitAndFocusButton').addEventListener('click', exitHandler);
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('journalButton').addEventListener('click', goToJournal);
+    document.getElementById('routineButton').addEventListener('click', goToRoutine);
+    document.getElementById('reflectionTimerButton').addEventListener('click', goToTimer);
+    document.getElementById('exitAndFocusButton').addEventListener('click', exitAndFocus);
 });
-
-
-const canvas = document.getElementById('sineCanvas');
-const ctx = canvas.getContext('2d');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-animateWaves();
-
-// Single wave
-function drawSineWave(phase, amplitude, frequency, speed, rotationAngle, Xshift, YShift) {
-    ctx.strokeStyle = 'rgba(255, 255, 255, 0.5)';
-    ctx.lineWidth = 2;
-
-    ctx.beginPath();
-    
-    for (let x = 0; x < canvas.width*2; x += 10) {
-        const y = amplitude * Math.sin(frequency * x + phase) + canvas.height / 2; 
-        const rotatedX = Math.cos(rotationAngle) * x - Math.sin(rotationAngle) * y + Xshift;
-        const rotatedY = Math.sin(rotationAngle) * x + Math.cos(rotationAngle) * y + YShift;
-        if (x === 0) {
-            ctx.moveTo(rotatedX, rotatedY);
-        } else {
-            ctx.lineTo(rotatedX, rotatedY);
-        }
-    }
-    ctx.stroke(); 
-    
-    return phase + speed;
-}
-
-function animateWaves() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height); 
-    
-    for (let i = 1; i <= 10; i++) {
-        animateWaves['phase' + i] =  drawSineWave(animateWaves['phase' + i] || i * 20, 30, 0.02, i/3 * 0.01, Math.PI / 4, i + 50* (i-2), 0 - 200 * (i-0.5)); }
-    requestAnimationFrame(animateWaves);
-}
-

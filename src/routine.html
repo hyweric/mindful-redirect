@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Routine</title>
+    <link rel="stylesheet" href="routine.css">
+</head>
+<body>
+    <main class="container">
+        <p class="eyebrow">Routine</p>
+
+        <section class="slide active" data-slide="0">
+            <div class="breath-wrap" aria-hidden="true">
+                <div class="breath-ring"></div>
+                <div class="breath-core">
+                    <span id="breathText">Breathe in</span>
+                </div>
+            </div>
+            <h1>Reset your breath.</h1>
+            <p>Follow the circle for one slow cycle before deciding.</p>
+        </section>
+
+        <section class="slide" data-slide="1">
+            <div class="spark-field" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <h1>Check the reason.</h1>
+            <p id="routineMessage">Does opening this site help you right now?</p>
+        </section>
+
+        <section class="slide" data-slide="2">
+            <div class="soft-sun" aria-hidden="true"></div>
+            <h1>Choose on purpose.</h1>
+            <p>If it still matters, continue. If not, close it and protect your focus.</p>
+        </section>
+
+        <div class="controls">
+            <button id="backButton" class="secondary-button">Back</button>
+            <button id="nextButton" class="primary-button">Next</button>
+        </div>
+
+        <div class="dots" aria-hidden="true">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </main>
+
+    <script src="routine.js"></script>
+</body>
+</html>

@@ -1,111 +1,115 @@
+:root {
+    --ink: #34243f;
+    --muted: #7c647f;
+    --card: rgba(255, 250, 240, 0.96);
+    --shadow: rgba(84, 47, 80, 0.16);
+}
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+    width: 390px;
     margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+    padding: 14px;
+    font-family: Inter, "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background: linear-gradient(135deg, #ffe3b8 0%, #ffc1b6 48%, #d8b5ff 100%);
+}
+
+.container {
+    padding: 20px;
+    border-radius: 22px;
+    background: var(--card);
+    box-shadow: 0 18px 45px var(--shadow);
 }
 
 h1 {
-    text-align: center;
-    color: rgb(15, 15, 15);
-    font-size: 1.3rem; 
-    font-weight: 700;
-    box-sizing: inherit;
-    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
+    margin: 0 0 16px;
+    font-size: 1.45rem;
+    letter-spacing: -0.03em;
 }
 
 label {
     display: block;
-    margin-top: 15px; 
-    background: transparent;
-    color: rgb(33, 33, 33);
-    font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
-    scroll-behavior: smooth;
-    font-size: 14px; 
+    margin: 14px 0 6px;
+    color: var(--muted);
+    font-size: 0.84rem;
+    font-weight: 800;
 }
 
-input[type="text2"], textarea{
+textarea,
+input,
+select {
     width: 100%;
-    padding: 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-top: 4px; 
-    margin-bottom: 12px; 
-    height: 90px; 
-    resize: none;
+    padding: 10px 12px;
+    border: 1px solid rgba(52, 36, 63, 0.14);
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.68);
+    color: var(--ink);
+    font: inherit;
+    outline: none;
 }
 
-input[type="text"], textarea, select {
-    width: 100%;
-    padding: 8px; 
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    box-sizing: border-box;
-    margin-top: 4px; 
-    margin-bottom: 12px; 
+textarea {
+    height: 96px;
     resize: vertical;
 }
 
-/* button by farfetch */
-button { 
-  background-color: #222;
-  border-radius: 4px;
-  border-style: none;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Farfetch Basis","Helvetica Neue",Arial,sans-serif;
-  font-size: 14px; 
-  font-weight: 700;
-  line-height: 1.5;
-  margin: 0;
-  max-width: none;
-  min-height: 40px; 
-  min-width: 8px; 
-  outline: none;
-  overflow: hidden;
-  padding: 7px 16px 6px;
-  position: relative;
-  text-align: center;
-  text-transform: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  width: 100%;
+textarea:focus,
+input:focus,
+select:focus {
+    border-color: #d89a40;
+    box-shadow: 0 0 0 3px rgba(255, 216, 107, 0.28);
+}
+
+button {
+    width: 100%;
+    margin-top: 16px;
+    padding: 12px 14px;
+    border: 0;
+    border-radius: 999px;
+    background: #3b2947;
+    color: white;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
 }
 
 button:hover {
-    background-color: #343434;
+    background: #2f2038;
 }
 
 #status {
-    margin: 15px 0; 
-    padding: 0px;
-    background-color: #ffffff;
-    color: #000000;
+    min-height: 20px;
+    margin-top: 12px;
+    color: #a77064;
     text-align: center;
-    border-radius: 5px;
+    font-weight: 800;
+}
+
+.whitelist-section {
+    margin-top: 18px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(52, 36, 63, 0.1);
+}
+
+h2 {
+    margin: 0 0 8px;
+    color: var(--muted);
+    font-size: 0.9rem;
 }
 
 ul {
-    list-style-type: none;
+    margin: 0;
     padding: 0;
+    list-style: none;
+    color: var(--muted);
+    font-size: 0.82rem;
 }
 
-.container {
-    width: 380px; 
-    text-align: center;
-    transform: translate3d(0, 0, 0);
-    animation: popOut 1s ease-in-out;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    padding-top: 12px; 
-    padding-left: 28px; 
-    padding-right: 28px; 
-    padding-bottom: 8px; 
-    background-color: white;
-    border-radius: 10px;
-    position: relative;
-    z-index: 1;
+li {
+    padding: 6px 0;
+    border-bottom: 1px solid rgba(52, 36, 63, 0.08);
 }

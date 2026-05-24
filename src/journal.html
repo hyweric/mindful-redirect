@@ -5,37 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal</title>
     <link rel="stylesheet" href="journalStyles.css">
-    <script src="./popup.js" defer></script>
-
 </head>
 <body>
-    <canvas id="sineCanvas"></canvas>
-    <div class="container">
-        <h1>Journal</h1>
-        <form id="journalForm">
-            <label for="journalEntry" class="body">Reason for accessing website:</label><br>
-            <textarea id="journalEntry" name="journalEntry" rows="10" cols="50"></textarea><br>
-            <label for="journalEntry2" class="body"> How it aligns with your goals: </label><br>
-            <textarea id="journalEntry2" name="journalEntry2" rows="10" cols="50"></textarea><br>
-            <label for="journalEntry3" class="body"> How you'll feel after going on the website:  </label><br>
-            <textarea id="journalEntry3" name="journalEntry3" rows="10" cols="50"></textarea><br>
-            <button type="submit" class="button main-button animate__animated animate__fadeInLeft">Submit</button>
-            <div class="divLarge"></div>
-        </form>
-        <div class="export-buttons">
-            <div class="button-container">
-                <button type="ECSV" class="button secondary-button ">Export as CSV</button>
-                <button type="ETXT" class="button secondary-button ">Export as TXT</button>
-            </div>
-        </div>
-    </div>
+    <main class="container">
+        <p class="eyebrow">Journal</p>
+        <h1>Why are you opening this?</h1>
+        <p class="subtitle">One sentence is fine. No word limit.</p>
 
-    <div class="blocks-container">
-        <div class="block"></div>
-        <div class="block"></div>
-        <div class="block"></div>
-        <div class="block"></div>
-    </div>
+        <form id="journalForm">
+            <label for="journalEntry">Reflection</label>
+            <textarea id="journalEntry" name="journalEntry" placeholder="I want to open this because..."></textarea>
+            <button type="submit" class="primary-button">Submit reflection</button>
+        </form>
+
+        <div class="export-buttons">
+            <button type="ECSV" class="secondary-button">Export CSV</button>
+            <button type="ETXT" class="secondary-button">Export TXT</button>
+        </div>
+    </main>
 
     <script src="journal.js"></script>
 </body>

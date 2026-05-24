@@ -1,161 +1,135 @@
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(to right, #7289da, #cab2fb);
-    font-family: "PT Sans", Calibri, Tahoma, sans-serif;
-    font-size: 25px;
-    color: #21242c;
-    line-height: 1.4;
+:root {
+    --ink: #34243f;
+    --muted: #7c647f;
+    --cream: #fff8ec;
+    --card: rgba(255, 250, 240, 0.88);
+    --peach: #ffd2a6;
+    --pink: #f7a6c2;
+    --lavender: #c6b8ff;
+    --gold: #ffd86b;
+    --shadow: rgba(84, 47, 80, 0.18);
 }
 
-#sineCanvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}        
+* {
+    box-sizing: border-box;
+}
 
-.btn svg {
-    width: 50px; 
-    height: 50px; 
-    fill: #7f3194; 
-    margin-bottom: 10px;
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    font-family: Inter, "Open Sans", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at 18% 20%, rgba(255, 216, 107, 0.85) 0 2px, transparent 3px),
+        radial-gradient(circle at 78% 18%, rgba(255, 248, 236, 0.9) 0 1px, transparent 2px),
+        radial-gradient(circle at 88% 70%, rgba(255, 216, 107, 0.75) 0 2px, transparent 3px),
+        radial-gradient(circle at 12% 82%, rgba(255, 248, 236, 0.9) 0 1px, transparent 2px),
+        linear-gradient(135deg, #ffe3b8 0%, #ffc1b6 38%, #d8b5ff 100%);
+    padding: 28px;
 }
 
 .container {
+    width: min(760px, 100%);
+    padding: 38px;
+    border-radius: 28px;
+    background: var(--card);
+    box-shadow: 0 24px 70px var(--shadow);
+    border: 1px solid rgba(255, 255, 255, 0.65);
     text-align: center;
-    transform: translate3d(0, 0, 0);
-    animation: popOut 1s ease-in-out;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    background: linear-gradient(to bottom, #c6d4ff, rgb(179, 179, 255));
-    border-radius: 10px;
-    position: relative;
-    z-index: 1;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    color: #a77064;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
 }
 
 h1 {
-    text-align: center;
-    text-transform: capitalize;
-    margin-top: 0;
-    font-size: 10vw;
-    font-weight: 400;
-    line-height: .8;
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 1.4;
-    font-family: "Open Sans", sans-serif; 
-    font-size: 32px;
-    letter-spacing: 2px;
-    text-transform: uppercase; 
-    color: #000; 
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
+}
+
+.subtitle {
+    margin: 14px auto 28px;
+    max-width: 480px;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.choice-card {
+    min-height: 180px;
+    padding: 22px;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.58);
+    color: var(--ink);
+    box-shadow: 0 12px 28px rgba(84, 47, 80, 0.1);
     cursor: pointer;
-    animation: moveBlocks 2s infinite alternate;
-    margin-bottom: 10px;
-
-}
-
-.button-container {
-    display: flex;
-    justify-content: space-around;  
-}
-
-
-
-.btn {
-    margin: 12px;
+    font: inherit;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  align-items: center;
-  background: #f5f5fa;
-  border: 0;
-  border-radius: 8px;
-  box-shadow: -2px -2px 30px 0 #fff,2px 2px 2px 0 #1d0dca17;
-  box-sizing: border-box;
-  color: #2a1f62;
-  cursor: pointer;
-  display: flex;
-  font-family: "Open Sans", sans-serif;
-  font-size: 1.3rem;
-  justify-content: center;
-  line-height: 1.5rem;
-  padding: 15px;
-  position: relative;
-  text-align: left;
-  transition: .2s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: pre;
-  width: 200px;
-  height: 180px;
-  word-break: normal;
-  word-spacing: normal;
-    
+    gap: 10px;
 }
 
-@media (min-width: 768px) {
-  .btn {
-    padding: 24px;
-  }
+.choice-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.74);
 }
 
-@keyframes moveBlocks {
-    0% {
-        transform: translateY(-5px);
-    }
-    100% {
-        transform: translateY(5px);
-    }
-}
-.animate__fadeInUp {
-    animation-name: fadeInUp;
-}
-@keyframes popOut {
-    0% {
-        transform: scale(0.9);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translate3d(0, 100%, 0);
-    }
-
-    to {
-        opacity: 1;
-        transform: none;
-    }
+.choice-card svg {
+    width: 42px;
+    height: 42px;
+    fill: #d89a40;
 }
 
-.buttonSubtitle {
-    color: rgb(43, 43, 43);
-    font-family: "Open Sans", sans-serif;
-    font-size: 15px;
-    user-select: text;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Added transition property */
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translate(-50%, -170%);
+.choice-card span {
+    font-size: 1.15rem;
+    font-weight: 800;
 }
 
-.btn:hover .buttonSubtitle {
-    opacity: 1;
-    transform: translate(-50%, -190%);
+.choice-card small {
+    color: var(--muted);
+    line-height: 1.35;
 }
 
-
-.exit {
+.exit-button {
     width: 100%;
+    margin-top: 18px;
+    padding: 14px 18px;
+    border: 0;
+    border-radius: 999px;
+    background: #3b2947;
+    color: white;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.exit-button:hover {
+    background: #2f2038;
+}
+
+@media (max-width: 720px) {
+    .button-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 28px;
+    }
 }
