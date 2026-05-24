@@ -1,21 +1,26 @@
-A Chrome extension that redirects specified websites onto a page, where you can choose to exit, redirect, or access the site through the means of completing a task.
+# Mindful Redirect
 
-## Installation 
-1. Navigate the the [Chrome Web Store Page](https://chromewebstore.google.com/detail/mindful-redirect/eaamioafeknhkapchlceggfdcombeoal)
-2. Click Add to Chrome
-3. Click on the Chrome Extension Icon to choose what website to redirect and customize. 
+A Chrome extension that redirects specified websites onto a mindfulness page, where you can choose to journal, complete a breathing routine, wait through a reflection timer, or exit and focus.
+
+## Installation
+
+1. Navigate to the [Chrome Web Store Page](https://chromewebstore.google.com/detail/mindful-redirect/eaamioafeknhkapchlceggfdcombeoal)
+2. Click **Add to Chrome**
+3. Click on the Chrome Extension icon to customize blocked websites, timer length, routine message, and unblock duration.
 
 ## Extension Page Images
 
-| Initial Page| Routine |
+| Home | Journal |
 | :---: | :---: |
-| ![Inital Page](https://github.com/yeetric/mindful-redirect/assets/82407170/c74c08ea-c037-4145-9651-62a996860b49 "Image 3") |![Routine](https://github.com/yeetric/mindful-redirect/assets/82407170/17ee803e-ec24-4bcd-a260-a9027915ca3c "Image 1") |
-| **Journal**| **Timer** |
-|![Journal Page](https://github.com/yeetric/mindful-redirect/assets/82407170/4a7145ee-e9fd-40ac-9639-f2782c07b55a)| ![Timer](https://github.com/yeetric/mindful-redirect/assets/82407170/ac99489e-905d-4b5e-a96b-a4aec2ef4bde "Image 2") |
+| ![Home](screenshots/home.png "Home") | ![Journal](screenshots/journal.png "Journal") |
 
+| Routine | Timer |
+| :---: | :---: |
+| ![Routine](screenshots/routine.png "Routine") | ![Timer](screenshots/timer.png "Timer") |
 
-**Customization Options:**
-- 🧑‍💻 Blocked Sites
-- ⏳ Reflection Timer Length
-- 💬 Custom messages displayed within mindfulness routine
-- ⏰ Unblock Expiration Duration
+## Customization Options
+
+- 🧑‍💻 Blocked sites
+- ⏳ Reflection timer length
+- 💬 Custom message displayed within the mindfulness routine
+- ⏰ Unblock expiration duration
